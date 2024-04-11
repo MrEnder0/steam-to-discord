@@ -30,10 +30,11 @@ func ScrapeSteamGroup(group_name string) []Message {
 	doc.Find(".commentthread_comments .commentthread_comment").Each(func(i int, s *goquery.Selection) {
 		message_id := strings.Split(s.AttrOr("id", ""), "_")[1]
 		message_author := strings.Replace(strings.TrimSpace(s.Find("a").Text()), "@", "@\u200b", -1)
+		author_picture := s.Find(".commentthread_comment_avatar img").AttrOr("src", "")
 		message_text := strings.Replace(strings.TrimSpace(s.Find(".commentthread_comment_text").Text()), "@", "@\u200b", -1)
 
 		if message_text != "" && message_text != "This comment is awaiting analysis by our automated content check system. It will be temporarily hidden until we verify that it does not contain harmful content (e.g. links to websites that attempt to steal information)." {
-			messages = append(messages, Message{message_id, message_author, message_text})
+			messages = append(messages, Message{message_id, message_author, author_picture, message_text})
 		}
 	})
 

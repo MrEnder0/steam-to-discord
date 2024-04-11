@@ -7,12 +7,6 @@ import (
 	"github.com/spf13/viper"
 )
 
-type Config struct {
-	GroupName  string
-	WebhookURL string
-	CheckFreq  int
-}
-
 func LoadConfig() Config {
 	viper.SetConfigName("config")
 	viper.AddConfigPath(".")
@@ -41,7 +35,8 @@ func genConfig() {
 
 	viper.SetDefault("GroupName", "steamgroupname")
 	viper.SetDefault("WebhookURL", "discordwebhookurl")
-	viper.SetDefault("CheckFreq", 180)
+	viper.SetDefault("CheckFreq", 60)
+	viper.SetDefault("ShowSteamPrefix", true)
 
 	err := viper.WriteConfigAs("config.yaml")
 	if err != nil {

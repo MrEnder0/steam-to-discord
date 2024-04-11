@@ -17,8 +17,9 @@ func main() {
 			if FindMessage(db, message.message_id) {
 				continue
 			}
-			PostMessage(message, config.WebhookURL)
+			PostMessage(message, config.WebhookURL, config.ShowSteamPrefix)
 			InsertMessage(db, message)
+			fmt.Printf("Posted message from: %s\n", message.message_author)
 			time.Sleep(1 * time.Second)
 		}
 		time.Sleep(time.Duration(config.CheckFreq))
