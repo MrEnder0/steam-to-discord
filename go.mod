@@ -1,12 +1,12 @@
 module steam-to-discord
 
-go 1.22.1
+go 1.22.2
 
 require (
 	github.com/PuerkitoBio/goquery v1.9.1 // direct
 	github.com/gtuk/discordwebhook v1.2.0 // direct
-	github.com/spf13/viper v1.18.2 // direct
 	github.com/mattn/go-sqlite3 v1.14.22 // direct
+	github.com/spf13/viper v1.18.2 // direct
 )
 
 require (
@@ -24,7 +24,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/exp v0.0.0-20240404231335-c0f41cb1a7a0 // indirect
+	golang.org/x/exp v0.0.0-20240409090435-93d18d7e34b8 // indirect
 	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sys v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect

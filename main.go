@@ -1,10 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"time"
 )
 
 func main() {
+	fmt.Println("Starting Steam -> Discord Bridge...")
+
 	config := LoadConfig()
 	db := OpenDatabase()
 

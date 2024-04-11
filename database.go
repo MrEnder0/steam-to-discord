@@ -23,9 +23,7 @@ func CreateDatabase() {
 	sqlStmt := `
 	CREATE TABLE IF NOT EXISTS messages (
 		id INTEGER PRIMARY KEY,
-		message_id TEXT,
-		message_author TEXT,
-		message_text TEXT
+		message_id TEXT NOT NULL
 	);
 	`
 	_, err := db.Exec(sqlStmt)
@@ -37,9 +35,9 @@ func CreateDatabase() {
 
 func InsertMessage(db *sql.DB, message Message) {
 	sqlStmt := `
-	INSERT INTO messages (message_id, message_author, message_text) VALUES (?, ?, ?)
+	INSERT INTO messages (message_id) VALUES (?)
 	`
-	_, err := db.Exec(sqlStmt, message.message_id, message.message_author, message.message_text)
+	_, err := db.Exec(sqlStmt, message.message_id)
 	if err != nil {
 		fmt.Printf("%q: %s\n", err, sqlStmt)
 		return
