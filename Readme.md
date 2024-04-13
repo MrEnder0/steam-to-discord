@@ -14,9 +14,9 @@ The config.yaml file which is generated on runtime  controls the behavior of the
 
 ```yaml
 checkfreq: 60 # How often to check for new Steam announcements (in seconds)
-groupname: steamgroupname # The name of your Steam group 
+groupname: steamgroupname # The name of your Steam group, this is found in the URL of your group
 ShowSteamPrefix: true  # Adds a "[Steam]" prefix to the webhook username (true/false)
-webhookurl: https://discord.com/api/webhooks/id  # Your Discord webhook URL
+webhookurl: https://discord.com/api/webhooks/id  # Your Discord webhook URL, this can be found in the settings of your Discord server
 ```
 
 ## Usage
