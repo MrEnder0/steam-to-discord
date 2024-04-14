@@ -25,6 +25,3 @@ webhookurl: https://discord.com/api/webhooks/id  # Your Discord webhook URL, thi
 2. Run the executable, this will automatically generate a config.yaml file and exit.
 3. Edit the config.yaml file to your liking, make sure to replace the placeholder group name and webhook URL with your own or the program will not work.
 4. Run the executable again, this time it will start the relay and begin fetching messages from your Steam group.
-
-> [!IMPORTANT]  
-> The first time you run the program, it will send all existing messages in the Steam group to your Discord. This is because it stores previous message IDs to identify new posts. Future runs will only send new messages because it will remember the last message ID it sent inside a local database.

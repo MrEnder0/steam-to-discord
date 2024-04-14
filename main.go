@@ -11,6 +11,8 @@ func main() {
 	config := LoadConfig()
 	db := OpenDatabase()
 
+	PopulateDatabase(db)
+
 	for {
 		messages := ScrapeSteamGroup(config.GroupName)
 		for _, message := range messages {

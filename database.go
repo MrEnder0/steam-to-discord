@@ -33,6 +33,26 @@ func CreateDatabase() {
 	}
 }
 
+func PopulateDatabase(db *sql.DB) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM messages").Scan(&count)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	if count == 0 {
+		config := LoadConfig()
+		messages := ScrapeSteamGroup(config.GroupName)
+
+		for _, message := range messages {
+			InsertMessage(db, message)
+		}
+
+		fmt.Println("Inital Database Population Complete")
+	}
+}
+
 func InsertMessage(db *sql.DB, message Message) {
 	sqlStmt := `
 	INSERT INTO messages (message_id) VALUES (?)
