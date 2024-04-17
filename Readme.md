@@ -1,6 +1,6 @@
 # Steam to Discord
 
-A customizable webhook relay to forward announcements and other updates from your Steam group directly to your Discord server. Written in Go.
+A customizable webhook relay written in Go to forward messages and other updates from your Steam group directly to your Discord server.
 
 ## Features
 
