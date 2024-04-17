@@ -10,7 +10,7 @@ A customizable webhook relay to forward announcements and other updates from you
 
 ## Configuration
 
-The config.yaml file which is generated on runtime  controls the behavior of the Steam to Discord relay:
+This is the base config.yaml file which is generated on inital runtime, this is meant to be modified to work with your own use case.
 
 ```yaml
 checkfreq: 60 # How often to check for new Steam announcements (in seconds)
