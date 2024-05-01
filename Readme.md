@@ -12,11 +12,11 @@ A customizable webhook relay written in Go to forward messages and other updates
 
 This is the base config.yaml file which is generated on inital runtime, this is meant to be modified to work with your own use case.
 
-```yaml
-checkfreq: 60 # How often to check for new Steam announcements (in seconds)
-groupname: steamgroupname # The name of your Steam group, this is found in the URL of your group
-ShowSteamPrefix: true  # Adds a "[Steam]" prefix to the webhook username (true/false)
-webhookurl: https://discord.com/api/webhooks/id  # Your Discord webhook URL, this can be found in the settings of your Discord server
+```toml
+checkfreq = 60 # How often to check for new Steam announcements (in seconds)
+groupname = 'steamgroupname' # The name of your Steam group, this is found in the URL of your group
+showsteamprefix = true # Adds a "[Steam]" prefix to the webhook username (true/false)
+webhookurl = 'https://discord.com/api/webhooks/id' # Your Discord webhook URL, this can be found in the settings of your Discord server
 ```
 
 ## Usage

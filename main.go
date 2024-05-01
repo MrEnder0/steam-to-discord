@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Starting Steam -> Discord Bridge...")
+	fmt.Println("Starting Steam -> Discord Bridge")
 
 	config := LoadConfig()
 	db := OpenDatabase()

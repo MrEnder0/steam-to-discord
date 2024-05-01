@@ -10,7 +10,7 @@ import (
 func LoadConfig() Config {
 	viper.SetConfigName("config")
 	viper.AddConfigPath(".")
-	viper.SetConfigType("yaml")
+	viper.SetConfigType("toml")
 
 	err := viper.ReadInConfig()
 	if err != nil {
@@ -31,14 +31,14 @@ func LoadConfig() Config {
 func genConfig() {
 	viper.SetConfigName("config")
 	viper.AddConfigPath(".")
-	viper.SetConfigType("yaml")
+	viper.SetConfigType("toml")
 
 	viper.SetDefault("GroupName", "steamgroupname")
-	viper.SetDefault("WebhookURL", "discordwebhookurl")
+	viper.SetDefault("WebhookURL", "https://discord.com/api/webhooks/id")
 	viper.SetDefault("CheckFreq", 60)
 	viper.SetDefault("ShowSteamPrefix", true)
 
-	err := viper.WriteConfigAs("config.yaml")
+	err := viper.WriteConfigAs("config.toml")
 	if err != nil {
 		log.Println("Error writing config file:", err)
 		os.Exit(1)

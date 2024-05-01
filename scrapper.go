@@ -33,7 +33,6 @@ func ScrapeSteamGroup(group_name string) []Message {
 		message_text := strings.Replace(strings.TrimSpace(s.Find(".commentthread_comment_text").Text()), "@", "@\u200b", -1)
 
 		author_page := s.Find(".commentthread_comment_avatar a").AttrOr("href", "")
-
 		author_picture := ScrapeUserProfilePicture(author_page)
 
 		if message_text != "" && message_text != "This comment is awaiting analysis by our automated content check system. It will be temporarily hidden until we verify that it does not contain harmful content (e.g. links to websites that attempt to steal information)." {
