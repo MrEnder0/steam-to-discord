@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"log"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -10,7 +11,7 @@ import (
 func OpenDatabase() *sql.DB {
 	db, err := sql.Open("sqlite3", "./steam_comments.db")
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		CreateDatabase()
 	}
 	return db
@@ -28,7 +29,7 @@ func CreateDatabase() {
 	`
 	_, err := db.Exec(sqlStmt)
 	if err != nil {
-		fmt.Printf("%q: %s\n", err, sqlStmt)
+		log.Printf("%q: %s\n", err, sqlStmt)
 		return
 	}
 }
@@ -37,7 +38,7 @@ func PopulateDatabase(db *sql.DB) {
 	var count int
 	err := db.QueryRow("SELECT COUNT(*) FROM messages").Scan(&count)
 	if err != nil {
-		fmt.Println(err)
+		log.Println("Error checking database for messages:", err)
 		return
 	}
 
@@ -59,7 +60,7 @@ func InsertMessage(db *sql.DB, message Message) {
 	`
 	_, err := db.Exec(sqlStmt, message.message_id)
 	if err != nil {
-		fmt.Printf("%q: %s\n", err, sqlStmt)
+		log.Printf("%q: %s\n", err, sqlStmt)
 		return
 	}
 }
@@ -71,7 +72,7 @@ func FindMessage(db *sql.DB, message_id string) bool {
 	var exists bool
 	err := db.QueryRow(sqlStmt, message_id).Scan(&exists)
 	if err != nil {
-		fmt.Printf("%q: %s\n", err, sqlStmt)
+		log.Printf("%q: %s\n", err, sqlStmt)
 		return false
 	}
 	return exists
