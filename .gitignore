@@ -1,4 +1,5 @@
 *.toml
 *.db
+*.dat
 *.exe
 steam-to-discord
