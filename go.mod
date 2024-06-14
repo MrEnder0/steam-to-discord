@@ -5,6 +5,7 @@ go 1.22.2
 require (
 	github.com/PuerkitoBio/goquery v1.9.2 // direct
 	github.com/gtuk/discordwebhook v1.2.0 // direct
+	github.com/mattn/go-sqlite3 v1.14.22 // direct
 	github.com/spf13/viper v1.19.0 // direct
 )
 
@@ -23,7 +24,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/exp v0.0.0-20240604190554-fc45aab8b7f8 // indirect
+	golang.org/x/exp v0.0.0-20240613232115-7f521ea00fb8 // indirect
 	golang.org/x/net v0.26.0 // indirect
 	golang.org/x/sys v0.21.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
