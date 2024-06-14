@@ -19,5 +19,5 @@ alias c := clean
     go clean
     rm bin/
     rm arm_database.dat
-    rm database.db
+    rm steam_comments.db
     rm config.toml
