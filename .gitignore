@@ -1,5 +1,9 @@
+# Ignore all binaries
+bin/*
+*.exe
+steam-to-discord
+
+# Ignore all config/data files
 *.toml
 *.db
 *.dat
-*.exe
-steam-to-discord
