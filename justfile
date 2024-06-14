@@ -4,6 +4,7 @@ default: build-arm
 
 alias b := build
 alias ba := build-arm
+alias c := clean
 
 [doc('Builds the base binary for arm')]
 @build-arm:
