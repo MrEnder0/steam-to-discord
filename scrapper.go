@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"strconv"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
@@ -37,8 +36,7 @@ func ScrapeSteamGroup(group_name string) []Message {
 		author_picture := ScrapeUserProfilePicture(author_page)
 
 		if message_text != "" && message_text != "This comment is awaiting analysis by our automated content check system. It will be temporarily hidden until we verify that it does not contain harmful content (e.g. links to websites that attempt to steal information)." {
-			id, _ := strconv.Atoi(message_id)
-			messages = append(messages, Message{id, message_author, author_picture, message_text})
+			messages = append(messages, Message{message_id, message_author, author_picture, message_text})
 		}
 	})
 
